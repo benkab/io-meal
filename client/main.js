@@ -6,6 +6,9 @@ import { Tracker } from 'meteor/tracker';
 import Home from '../imports/ui/Home';
 import Signin from '../imports/ui/Signin';
 import Signup from '../imports/ui/Signup';
+import Item from '../imports/ui/Item';
+import Category from '../imports/ui/Category';
+
 
 import { Provider } from 'react-redux';
 import store from './../imports/store';
@@ -14,7 +17,7 @@ const unauthenticatedPages = [
   '/signin', '/signup'
 ];
 const authenticatedPages = [
-  '/'
+  '/', '/items', '/categories'
 ];
 const onEnterPublicPage = () => {
   if(Meteor.userId()){
@@ -31,6 +34,8 @@ const routes = (
   <Provider store={store}>
   	<Router history={browserHistory}>
   	  <Route path="/" component={Home} onEnter={onEnterPrivatePage}/>
+      <Route path="/items" component={Item} onEnter={onEnterPrivatePage}/>
+      <Route path="/categories" component={Category} onEnter={onEnterPrivatePage}/>
       <Route path="/signin" component={Signin} onEnter={onEnterPublicPage}/>
       <Route path="/signup" component={Signup} onEnter={onEnterPublicPage}/>
   	</Router>

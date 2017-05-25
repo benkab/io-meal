@@ -12,6 +12,7 @@ import { toggleModalState } from './../store/actions/modalActions';
 import Categories from './../api/Category';
 import DeleteModal from './DeleteModal';
 import CategoryUpdate from './CategoryUpdate';
+import Layout from './Layout';
 
 class Category extends TrackerReact(Component) {
 
@@ -60,48 +61,51 @@ class Category extends TrackerReact(Component) {
   render() {
     return (
       <div>
-        <div className="container">
-          <div className="row title-row">
-            <span>Categories</span>
-            <div className="pull-right right-container">
-              <input 
-                type="text" 
-                className="search" 
-                placeholder="Search" 
-                ref="search"
-                onChange={this.categories_resutls.bind(this)}/>
-              <a onClick={this.displayModal.bind(this)}>New category</a>
+        <Layout />
+        <div className="row home">
+          <div className="container">
+            <div className="row title-row">
+              <span>Categories</span>
+              <div className="pull-right right-container">
+                <input 
+                  type="text" 
+                  className="search" 
+                  placeholder="Search" 
+                  ref="search"
+                  onChange={this.categories_resutls.bind(this)}/>
+                <a onClick={this.displayModal.bind(this)}>New category</a>
+              </div>
             </div>
+            {
+              !this.state.search &&
+              <div>
+                {this.categories().map( (category) => {
+                  return <CategoryItem key={category._id} category={category} />
+                })}
+              </div>
+            }
+            {
+              (this.state.search && this.state.results) &&
+              <div>
+                {this.state.results.map( (category) => {
+                  return <CategoryItem key={category._id} category={category} />
+                })}
+              </div>
+            }  
           </div>
           {
-            !this.state.search &&
-            <div>
-              {this.categories().map( (category) => {
-                return <CategoryItem key={category._id} category={category} />
-              })}
-            </div>
+            (this.props.modalIsDiplayed.modalIsDiplayed === true) &&
+            <CategoryInput title={'Adding a category'} />
           }
           {
-            (this.state.search && this.state.results) &&
-            <div>
-              {this.state.results.map( (category) => {
-                return <CategoryItem key={category._id} category={category} />
-              })}
-            </div>
-          }  
+            (this.props.isDeleting.isDeleting === true) &&
+            <DeleteModal />
+          }
+          {
+            (this.props.isEditingCategory.isEditingCategory === true) &&
+            <CategoryUpdate />
+          }
         </div>
-        {
-          (this.props.modalIsDiplayed.modalIsDiplayed === true) &&
-          <CategoryInput title={'Adding a category'} />
-        }
-        {
-          (this.props.isDeleting.isDeleting === true) &&
-          <DeleteModal />
-        }
-        {
-          (this.props.isEditingCategory.isEditingCategory === true) &&
-          <CategoryUpdate />
-        }
       </div>
     )
   }

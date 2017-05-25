@@ -10,18 +10,17 @@ import Icon from 'react-ionicons';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-class Home extends TrackerReact(Component) {
+class Layout extends TrackerReact(Component) {
 
   render() {
     return (
-      <div className="row home">
+      <div>
       	<Navigation />
         {
           (this.props.dropdownIsOpen.dropdownIsOpen === true) &&
           <UserDropdown />
         }
       	<Menu />
-      	<div>Home</div>
       </div>
     )
   }
@@ -33,4 +32,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps)(Layout);

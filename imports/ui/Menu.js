@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import React, { Component } from 'react';
 import './../styles/menu.css';
+import { Link, browserHistory } from 'react-router';
 
 class Menu extends Component {
 
@@ -21,10 +22,10 @@ class Menu extends Component {
 	  	<div className={(this.state.hasOpenClass ? 'open menu' : 'menu')}>
 	  	  <div className="col-xs-9 menuContainer">
 	      	<ul>
-	      	  <li>
+	      	  <li onClick={() => {browserHistory.push('/items')}}>
 	      	   	<a>Items</a>
 	      	  </li>
-	      	  <li>
+	      	  <li onClick={() => {browserHistory.push('/categories')}}>
 	      	   	<a>Categories</a>
 	      	  </li>
 	      	  <li>
