@@ -1,0 +1,49 @@
+.menu{
+	position: fixed;
+	max-width: 400px;
+	top: 8%;
+	transition: margin 200ms ease-in-out;
+}
+
+.menu.open{
+	margin-left: -150px;
+	transition: margin 50ms ease-in-out;
+}
+
+.menu ul{
+	padding: 0px;
+	margin: 0px;
+	padding-left: 15px;
+	padding-right: 50px;
+}
+
+.menu ul li{
+	list-style: none;
+	margin-bottom: 20px;
+}
+
+.menu ul li a{
+	text-decoration: none;
+	color: #ffffff !important;
+	font-size: 11px;
+	letter-spacing: 1px;
+	cursor: pointer;
+}
+
+.menu .menuContainer{
+	/*min-width: 200px;*/
+}
+
+.menu .navContainer{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	vertical-align: middle;
+	padding-top: 8px;
+}
+
+.menu .navContainer img{
+	color: #ffffff !important;
+	font-size: 18px;
+	cursor: pointer;
+}

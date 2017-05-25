@@ -1,0 +1,135 @@
+.home{
+	position: relative;
+}
+
+.home .user-dropdown{
+	position: absolute;
+	right: 40px;
+	border: 1px solid #C8E6FC;
+	padding: 0px;
+	padding-top: 10px;
+	border-radius: 3px;
+	top: 65px;
+	min-width: 150px;
+}
+
+.home .user-dropdown ul{
+	padding: 0px;
+	margin: 0px;
+	text-align: center;
+}
+
+.home .user-dropdown ul li{
+	padding-bottom: 10px;
+	font-size: 11px;
+	letter-spacing: 1px;
+	cursor: pointer;
+	color: #E4F3FE;
+	list-style: none;
+}
+
+.home .user-dropdown ul li:hover{
+	color: #ffffff;
+}
+
+.home .user-dropdown ul li.profile{
+	border-bottom: 1px solid #C8E6FC;
+	margin-bottom: 10px;
+}
+
+.home .title-row{
+	border-bottom: 1px solid #C8E6FC;
+	padding-bottom: 15px;
+	margin-bottom: 20px;
+	color: #E4F3FE;
+}
+
+.home .title-row span{
+	font-size: 13px;
+	color:  #ffffff;
+}
+
+.home .title-row a{
+	background: #ffffff;
+	font-size: 11px !important;
+	padding: 4px 17px;
+	border-radius: 3px;
+	cursor: pointer;
+	margin-left: 10px;
+	text-decoration: none;
+	color: #30648F;
+}
+
+.home .title-row a:hover{
+	background: #F8F8F8;
+}
+
+.home .title-row .right-container{
+	margin-top: -5px;
+}
+
+.home .item-row{
+	padding-top: 5px;
+	color:  #ffffff;
+	box-shadow: 0px 2px 1px -2px rgba(255,255,255,0.9);
+	padding-bottom: 5px;
+	padding-right: 0px !important;
+}
+
+.home .item-row span{
+	font-size: 12px !important;
+}
+
+.home .item-row .first-column{
+	margin-left: -15px;
+}
+
+
+.home .item-row .last-column{
+	margin-right: -25px !important;
+}
+
+.home .item-row ul{
+	padding: 0px;
+	margin: 0px;
+	margin-right: -30px !important;
+}
+
+.home .item-row ul li{
+	list-style: none;
+	cursor: pointer;
+	display: inline;
+	margin-left: 4px;
+}
+
+.search{
+	margin: 0px !important;
+	box-shadow: none;
+	outline: none;
+	font-size: 11px !important;
+	padding-bottom: 0px;
+	border: 1px solid #E4F3FE !important;
+	background: transparent;
+	padding: 5px 10px;
+	color: #ffffff !important;
+	border-radius: 3px;
+}
+
+.search::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #E4F3FE;
+}
+.search::-moz-placeholder { /* Firefox 19+ */
+  color: #E4F3FE;
+}
+.search:-ms-input-placeholder { /* IE 10+ */
+  color: #E4F3FE;
+}
+.search:-moz-placeholder { /* Firefox 18- */
+  color: #E4F3FE;
+}
+
+.hasError{
+	/*background: #DC6146 !important;*/
+	border-color: #DC6146 !important;
+	color: #DC6146 !important;
+}

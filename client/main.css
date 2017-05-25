@@ -1,0 +1,17 @@
+/* CSS declarations go here */
+body, html{
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Monda', sans-serif !important;
+  background: #141e30; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #141e30, #243b55); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #141e30, #243b55); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome */
+  font-size: 13px;
+  height: 100%;
+  color: #E4F3FE;
+  position: relative;
+}
+
+.row{
+  margin: 0px !important;
+}
