@@ -20,7 +20,7 @@ class Menu extends Component {
   render() {
     return (
 	  	<div className={(this.state.hasOpenClass ? 'open menu' : 'menu')}>
-	  	  <div className="col-xs-9 menuContainer">
+	  	  <div className="row">
 	      	<ul>
 	      	  <li onClick={() => {browserHistory.push('/items')}}>
 	      	   	<a>Items</a>
@@ -36,8 +36,15 @@ class Menu extends Component {
 	      	  </li>
 	      	</ul>
 	  	  </div>
-	  	  <div className="col-xs-3 navContainer">
-	  	  	<img src="/nav.png" onClick={this.toggleMenu.bind(this)}/>
+	  	  <div className="row navContainer">
+	  	  	{
+	  	      (this.state.hasOpenClass === true) &&
+	  	      <img src="/down.png" onClick={this.toggleMenu.bind(this)}/>
+	  	  	}
+	  	  	{
+	  	      (this.state.hasOpenClass === false) &&
+	  	      <img src="/up.png" onClick={this.toggleMenu.bind(this)}/>
+	  	  	}
 	  	  </div>
 	  	</div>
     )

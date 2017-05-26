@@ -21,7 +21,8 @@ class Category extends TrackerReact(Component) {
     this.state = {
       showModal: false,
       subscription : {
-        categories : Meteor.subscribe('categories')
+        categories : Meteor.subscribe('categories'),
+        items : Meteor.subscribe('items')
       },
       search: null,
       results: []
@@ -55,6 +56,7 @@ class Category extends TrackerReact(Component) {
 
   componentWillUnmount() {
     this._renderComputation.stop();
+    Meteor.subscribe('items').stop();
     Meteor.subscribe('categories').stop();
   }
 
