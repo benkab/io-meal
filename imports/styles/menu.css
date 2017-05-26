@@ -1,25 +1,27 @@
 .menu{
 	position: fixed;
-	max-width: 400px;
-	top: 8%;
+	width: 75%;
+	left: 50%;
+	margin-left: -37.2%;
 	transition: margin 200ms ease-in-out;
+	z-index: 999999999;
+	margin-top: -180px;
 }
 
 .menu.open{
-	margin-left: -150px;
+	margin-top: -330px;
 	transition: margin 50ms ease-in-out;
 }
 
 .menu ul{
 	padding: 0px;
 	margin: 0px;
-	padding-left: 15px;
-	padding-right: 50px;
+	text-align: center;
 }
 
 .menu ul li{
 	list-style: none;
-	margin-bottom: 20px;
+	margin-bottom: 15px;
 }
 
 .menu ul li a{
@@ -35,15 +37,13 @@
 }
 
 .menu .navContainer{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	vertical-align: middle;
 	padding-top: 8px;
+	text-align: center ;
 }
 
 .menu .navContainer img{
 	color: #ffffff !important;
-	font-size: 18px;
 	cursor: pointer;
+/*	width: 30px;
+	height: 20px;*/
 }

@@ -2,10 +2,10 @@
 	position: relative;
 }
 
-.home .user-dropdown{
+.user-dropdown{
 	position: absolute;
 	right: 40px;
-	border: 1px solid #C8E6FC;
+	border: 1px solid #ffffff;
 	padding: 0px;
 	padding-top: 10px;
 	border-radius: 3px;
@@ -13,13 +13,13 @@
 	min-width: 150px;
 }
 
-.home .user-dropdown ul{
+.user-dropdown ul{
 	padding: 0px;
 	margin: 0px;
 	text-align: center;
 }
 
-.home .user-dropdown ul li{
+.user-dropdown ul li{
 	padding-bottom: 10px;
 	font-size: 11px;
 	letter-spacing: 1px;
@@ -28,17 +28,17 @@
 	list-style: none;
 }
 
-.home .user-dropdown ul li:hover{
+.user-dropdown ul li:hover{
 	color: #ffffff;
 }
 
-.home .user-dropdown ul li.profile{
-	border-bottom: 1px solid #C8E6FC;
+.user-dropdown ul li.profile{
+	border-bottom: 1px solid #ffffff;
 	margin-bottom: 10px;
 }
 
 .home .title-row{
-	border-bottom: 1px solid #C8E6FC;
+	border-bottom: 1px solid #ffffff;
 	padding-bottom: 15px;
 	margin-bottom: 20px;
 	color: #E4F3FE;

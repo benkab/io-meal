@@ -1,6 +1,7 @@
 const initialState = {
   theObject : null,
-  isDeleting: false
+  isDeleting: false,
+  objectType: null
 }
 
 export default deletionReducer = function(state=initialState, action) {
@@ -19,6 +20,10 @@ export default deletionReducer = function(state=initialState, action) {
     }
     case "DISABLEDELETION": {
       state = {...state, isDeleting: action.payload}
+      break;
+    }
+    case "SETOBJECTTYPE": {
+      state = {...state, objectType: action.payload}
       break;
     }
   }

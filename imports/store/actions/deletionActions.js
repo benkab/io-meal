@@ -7,6 +7,15 @@ export function setObject(theObject) {
   }
 }
 
+export function setObjectType(objectType) {
+  return {
+    type: 'SETOBJECTTYPE',
+    payload: {
+      objectType: objectType
+    }
+  }
+}
+
 export function resetObject(theObject) {
   return {
     type: 'RESETOBJECT',

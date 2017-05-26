@@ -65,7 +65,6 @@ class CategoryUpdate extends TrackerReact(Component) {
   }
 
   render() {
-    console.log(this.props.category)
     return (
       <div className="modal-container">
         <span className="closeButton" onClick={this.closeModal.bind(this)}>

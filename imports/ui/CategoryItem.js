@@ -6,13 +6,22 @@ import Icon from 'react-ionicons';
 import Avatar from 'react-avatar';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { setObject, enableDeletion } from './../store/actions/deletionActions';
+import { setObject, enableDeletion, setObjectType } from './../store/actions/deletionActions';
 import { setCategory, enableCategoryDeletion } from './../store/actions/categoryActions';
+import Items from './../api/Item';
 
 class CategoryItem extends TrackerReact(Component) {
 
+  constructor(){
+    super();
+    this.state = {
+      isDeletable: null,
+    }
+  }
+
   deleteCategory(event){
     event.preventDefault();
+    this.props.setObjectType("Category");
     this.props.setObject(this.props.category);
     this.props.enableDeletion(this.props.isDeleting);
   }
@@ -21,6 +30,17 @@ class CategoryItem extends TrackerReact(Component) {
     event.preventDefault();
     this.props.setCategory(this.props.category);
     this.props.enableCategoryDeletion(this.props.isEditingCategory);
+  }
+
+  componentDidMount(){
+    Meteor.setTimeout(() => {
+      const count = Items.find({category: this.props.category._id}).count();
+      if(count === 0){
+        this.setState({isDeletable: true})
+      } else if(count === 1) {
+        this.setState({isDeletable: null})
+      }
+    }, 400);
   }
 
   render(props) {
@@ -37,9 +57,12 @@ class CategoryItem extends TrackerReact(Component) {
             <li onClick={this.updateCategory.bind(this)}>
               <Icon icon="ion-edit" fontSize="13px" color="#ffffff"/>
             </li>
-            <li onClick={this.deleteCategory.bind(this)}>
-              <Icon icon="ion-android-delete" fontSize="13px" color="#ffffff"/>
-            </li>
+            {
+              (this.state.isDeletable) &&
+              <li onClick={this.deleteCategory.bind(this)}>
+                <Icon icon="ion-android-delete" fontSize="13px" color="#ffffff"/>
+              </li>
+            }
           </ul>
         </div>
       </div>
@@ -60,7 +83,8 @@ function matchDispatchToProps(dispatch) {
     setObject: setObject,
     enableDeletion: enableDeletion,
     setCategory: setCategory,
-    enableCategoryDeletion: enableCategoryDeletion
+    enableCategoryDeletion: enableCategoryDeletion,
+    setObjectType: setObjectType
   }, dispatch)
 }
 
